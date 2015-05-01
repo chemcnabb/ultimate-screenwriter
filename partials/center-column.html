@@ -1,47 +1,22 @@
 <!--center-->
-<div class="col-sm-6">
+
 
     <ng-include src="'partials/screenplay-toolbar.html'"></ng-include>
+    <div ng-controller="CardController">
+        <div class="container col-xs-12" ng-repeat="card in cards">
+            <div class="row">
+                <a id="scene-1"></a>
+                <div class="col-xs-12 scene-card screenplay">
+                    <ng-include src="'partials/scene-card.html'" ></ng-include>
+                    <ng-include src="'partials/scene-card-meta.html'"></ng-include>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
 
-    <div class="row">
-        <a id="scene-1"></a>
-        <div class="col-xs-12 scene-card screenplay">
-            <ng-include src="'partials/scene-card.html'"></ng-include>
-            <ng-include src="'partials/scene-card-meta.html'"></ng-include>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <a id="scene-2"></a>
-        <div class="col-xs-12 scene-card screenplay">
-            <ng-include src="'partials/scene-card.html'"></ng-include>
-            <ng-include src="'partials/scene-card-meta.html'"></ng-include>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <a id="scene-3"></a>
-        <div class="col-xs-12 scene-card screenplay">
-            <ng-include src="'partials/scene-card.html'"></ng-include>
-            <ng-include src="'partials/scene-card-meta.html'"></ng-include>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <a id="scene-4"></a>
-        <div class="col-xs-12 scene-card screenplay">
-            <ng-include src="'partials/scene-card.html'"></ng-include>
-            <ng-include src="'partials/scene-card-meta.html'"></ng-include>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <a id="scene-5"></a>
-        <div class="col-xs-12 scene-card screenplay">
-            <ng-include src="'partials/scene-card.html'"></ng-include>
-            <ng-include src="'partials/scene-card-meta.html'"></ng-include>
-        </div>
-    </div>
-    <hr>
-    <ng-include src="'partials/timeline.html'"></ng-include>
-</div><!--/center-->
+
+
+
+
+
