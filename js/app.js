@@ -1,16 +1,15 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-var app = angular.module('ultimate', [
+var app = angular.module('ultimate',[
     'ui.bootstrap',
-    'ngRoute'
-
-
+    'ngRoute',
+    'flow'
 ]).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'content/landing.html',
-            controller: 'LandingCtrl'
+            templateUrl: 'content/import.html',
+            controller: 'ImportCtrl'
         });
         $routeProvider.when('/import-screenplay', {
             templateUrl: 'content/import.html',
@@ -21,6 +20,19 @@ var app = angular.module('ultimate', [
             controller: 'ContentCtrl'
         });
         $routeProvider.otherwise({redirectTo: '/content'});
+
+    }]).config(['flowFactoryProvider', function (flowFactoryProvider) {
+        flowFactoryProvider.defaults = {
+            target: 'uploads',
+            permanentErrors: [500, 501],
+            maxChunkRetries: 1,
+            chunkRetryInterval: 5000,
+            simultaneousUploads: 1
+        };
+        flowFactoryProvider.on('catchAll', function (event) {
+            console.log('catchAll', arguments);
+
+        });
 
     }]);
 
